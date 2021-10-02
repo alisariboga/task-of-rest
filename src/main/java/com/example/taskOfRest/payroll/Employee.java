@@ -1,11 +1,15 @@
 package com.example.taskOfRest.payroll;
 
+
 import java.util.Objects;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
-
+//@Entity
 class Employee {
 
-    private String id;
+//    @Id
+    private Long id;
     private String name;
     private String role;
 
@@ -18,7 +22,7 @@ class Employee {
         this.role = role;
     }
 
-    public String getId() {
+    public Long getId() {
         return this.id;
     }
 
@@ -30,7 +34,7 @@ class Employee {
         return this.role;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
