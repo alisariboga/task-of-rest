@@ -51,15 +51,51 @@ public class StringControllerTest {
     }
 
     @Test
-    void isAnagramTestResultTrue() throws Exception {
+    void createAnagramTestResultTrue() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders
-                        .get("/anagram/listen/silent")
+                        .post("/anagram")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{\n" +
+                                "\"attribute1\":\"silent\",\n" +
+                                "\"attribute2\":\"listen\"\n" +
+                                "}\n")
                         .accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(content().json("{\"isAnagram:\":\"true\",\"input1:\":\"listen\",\"input2:\":\"silent\"}"));
+                .andExpect(content().json(
+                        "{" +
+                        "\"attribute1\":\"silent\"," +
+                        "\"attribute2\":\"listen\"," +
+                        "\"result\":\"anagram\"" +
+                        "}"));
+    } @Test
+    void createAnagramTestResultTrue2() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders
+                        .post("/anagram")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{\n" +
+                                "\"attribute1\":\"kres\",\n" +
+                                "\"attribute2\":\"srek\"\n" +
+                                "}\n")
+                        .accept(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(content().json(
+                        "{" +
+                        "\"attribute1\":\"kres\"," +
+                        "\"attribute2\":\"srek\"," +
+                        "\"result\":\"anagram\"" +
+                        "}"));
     }
 
-
+    @Test
+    void createAnagramTestResultFalse() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders
+                        .post("/anagram/adana/ankara")
+                        .accept(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(content().string("result: not-anagram"));
+    }
 }
 

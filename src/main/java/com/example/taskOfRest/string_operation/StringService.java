@@ -24,25 +24,19 @@ public class StringService {
 
     }
 
-    public Boolean isAnagram(String firstWord, String secondWord) {
-        firstWord.trim().replaceAll("\\s", "");
-        secondWord.trim().replaceAll("\\s", "");
+    public ResultAnagram createAnagram(String firstWord, String secondWord) {
 
-
-        char[] arrayFirstWord = firstWord.toLowerCase().toCharArray();
-        char[] arraySecondWord = firstWord.toLowerCase().toCharArray();
-
+        char[] arrayFirstWord = firstWord.trim().replace("_", "").replaceAll("\\s", "").toLowerCase().toCharArray();
+        char[] arraySecondWord = secondWord.trim().replaceAll("\\s", "").toLowerCase().toCharArray();
 
         Arrays.sort(arrayFirstWord);
         Arrays.sort(arraySecondWord);
 
-        if (arrayFirstWord.equals(arraySecondWord)) {
-            return true;
+        if (Arrays.equals(arrayFirstWord, arraySecondWord)) {
+            return new ResultAnagram(firstWord, secondWord, "anagram");
         } else {
-            return false;
+            return new ResultAnagram(firstWord, secondWord, "not-anagram");
         }
-
-
     }
 }
 

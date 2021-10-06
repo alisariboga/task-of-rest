@@ -3,10 +3,8 @@ package com.example.taskOfRest.string_operation;
 import java.util.HashMap;
 import java.util.Map;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @ComponentScan
@@ -36,6 +34,13 @@ public class StringController {
         map.put("isPalindrome:", String.valueOf(palindrome));
 
         return map;
+    }
+
+    @PostMapping(value = "/anagram", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public ResultAnagram createAnagram(@RequestBody CheckAnagram checkAnagram) {
+        return stringService.createAnagram(checkAnagram.getAttribute1(), checkAnagram.getAttribute2());
+
 
     }
 }
