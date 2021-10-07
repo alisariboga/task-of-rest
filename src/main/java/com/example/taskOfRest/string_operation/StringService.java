@@ -40,24 +40,49 @@ public class StringService {
     }
 
     public Integer sortedArrayAndFindMinValue(int[] numbers) {
-        int minValue = numbers[0];
+        int number[] = {3, 4, 5, 6, 7, 1, 2,};
 
-        Arrays.sort(numbers);
-        for (int i = 1; i < numbers.length - 1; i++)
-            if (minValue < numbers[i]) {
-                minValue = numbers[0];
+        int minValue = number[0];
+
+        sortArrayMethod(number);
+
+        for (int i = 1; i < number.length - 1; i++)
+            if (minValue < number[i]) {
+                minValue = number[0];
             }
-
-
         return minValue;
 
     }
 
-    public Integer binarySearch(int numbers[], int )
+    private void sortArrayMethod(int[] number) {
+        int counter;
+        for (int i = 0; i < number.length; i++) {
+            for (int j = i + 1; j < number.length; j++) {
+                if (number[i] > number[j]) {
+                    counter = number[i];
+                    number[i] = number[j];
+                    number[j] = counter;
+                }
+            }
+        }
+    }
+
+    public int my_BinarySearch(int newArray[], int number) {
+        int left = 0;
+        int right = newArray.length - 1;
+
+        while (left <= right) {
+            int middle = (left + right) / 2;
+            if (number < newArray[middle]) {
+                right = middle - 1;
+            } else if (number > newArray[middle]) {
+                left = middle + 1;
+            } else {
+                return middle;
+            }
+        }
+        return -1;
+    }
+
+
 }
-
-
-
-
-
-

@@ -73,57 +73,25 @@ public class StringServiceTest {
         ResultAnagram resultAnagram4 = new ResultAnagram("s i l _ e n t", "l i s t _ e n", "not-anagram");
 
         ResultAnagram createAnagramListenAndSilent = stringService.createAnagram("silent", "listen");
-        assertTrue(new ResultAnagram(createAnagramListenAndSilent.getAttribute1(), createAnagramListenAndSilent.getAttribute2(),createAnagramListenAndSilent.getResult()).equals(resultAnagram1));
+        assertTrue(new ResultAnagram(createAnagramListenAndSilent.getAttribute1(), createAnagramListenAndSilent.getAttribute2(), createAnagramListenAndSilent.getResult()).equals(resultAnagram1));
 
         ResultAnagram createAnagramAdanaAndAnkara = stringService.createAnagram("adana", "ankara");
-        assertTrue(new ResultAnagram(createAnagramAdanaAndAnkara.getAttribute1(), createAnagramAdanaAndAnkara.getAttribute2(),createAnagramAdanaAndAnkara.getResult()).equals(resultAnagram2));
+        assertTrue(new ResultAnagram(createAnagramAdanaAndAnkara.getAttribute1(), createAnagramAdanaAndAnkara.getAttribute2(), createAnagramAdanaAndAnkara.getResult()).equals(resultAnagram2));
 
         ResultAnagram createAnagramSpaceListenAndSilent = stringService.createAnagram("s i l e n t", "l i s t e n");
-        assertTrue(new ResultAnagram(createAnagramSpaceListenAndSilent.getAttribute1(), createAnagramSpaceListenAndSilent.getAttribute2(),createAnagramSpaceListenAndSilent.getResult()).equals(resultAnagram3));
+        assertTrue(new ResultAnagram(createAnagramSpaceListenAndSilent.getAttribute1(), createAnagramSpaceListenAndSilent.getAttribute2(), createAnagramSpaceListenAndSilent.getResult()).equals(resultAnagram3));
 
         ResultAnagram createAnagramListenAndSilentBetweenUnderscore = stringService.createAnagram("s i l _ e n t", "l i s t _ e n");
-        assertTrue(new ResultAnagram(createAnagramListenAndSilentBetweenUnderscore.getAttribute1(), createAnagramListenAndSilentBetweenUnderscore.getAttribute2(),createAnagramListenAndSilentBetweenUnderscore.getResult()).equals(resultAnagram4));
+        assertTrue(new ResultAnagram(createAnagramListenAndSilentBetweenUnderscore.getAttribute1(), createAnagramListenAndSilentBetweenUnderscore.getAttribute2(), createAnagramListenAndSilentBetweenUnderscore.getResult()).equals(resultAnagram4));
     }
 
     @Test
     public void test_SortedArrayAndFindMinValue() throws Exception {
         StringService stringService = new StringService();
-        stringService.sortedArrayAndFindMinValue(new int[]{1,2,3,4,5,6});
+        stringService.sortedArrayAndFindMinValue(new int[]{1, 2, 3, 4, 5, 6});
         stringService.sortedArrayAndFindMinValue(new int[]{-12, -8, 10, 46, 11, 65});
-        stringService.sortedArrayAndFindMinValue(new int[]{89,12,34,-98,12,34,45,1,2,3,4,15,-100,0});
-        stringService.sortedArrayAndFindMinValue(new int[]{21,45,32,93,8,5,-198,23,21,45});
+        stringService.sortedArrayAndFindMinValue(new int[]{89, 12, 34, -98, 12, 34, 45, 1, 2, 3, 4, 15, -100, 0});
+        stringService.sortedArrayAndFindMinValue(new int[]{21, 45, 32, 93, 8, 5, -198, 23, 21, 45});
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
