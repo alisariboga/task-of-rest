@@ -38,6 +38,22 @@ public class StringService {
             return new ResultAnagram(firstWord, secondWord, "not-anagram");
         }
     }
+
+    public Integer sortedArrayAndFindMinValue(int[] numbers) {
+        int minValue = numbers[0];
+
+        Arrays.sort(numbers);
+        for (int i = 1; i < numbers.length - 1; i++)
+            if (minValue < numbers[i]) {
+                minValue = numbers[0];
+            }
+
+
+        return minValue;
+
+    }
+
+    public Integer binarySearch(int numbers[], int )
 }
 
 
