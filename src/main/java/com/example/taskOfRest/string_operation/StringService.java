@@ -40,19 +40,9 @@ public class StringService {
         }
     }
 
-    public MinValueArray findMinValueInArray(int[] newArray) {
-        //-100,-98,0,1,2,3,4,12,12,15,34,34,45,89
-        int minValue;
-
-        minValue = newArray[0];
-
+    public int findMinValueInArray(int[] newArray) {
         sortArrayMethod(newArray);
-
-        for (int i = 1; i < newArray.length - 1; i++)
-            if (minValue < newArray[i]) {
-                minValue = newArray[0];
-            }
-        return new MinValueArray(newArray,minValue);
+        return newArray[0];
     }
 
     private void sortArrayMethod(int[] newArray) {
