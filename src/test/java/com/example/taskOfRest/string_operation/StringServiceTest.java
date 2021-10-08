@@ -88,16 +88,16 @@ public class StringServiceTest {
     @Test
     public void test_FindMinValueInArray() throws Exception {
         StringService stringService = new StringService();
-        MinValueArray minValueArray1 = new MinValueArray(-9);
-        MinValueArray minValueArray2 = new MinValueArray( -12);
-        MinValueArray minValueArray3 = new MinValueArray(-100);
-        MinValueArray minValueArray4 = new MinValueArray(-198);
+//        MinValueArray minValueArray1 = new MinValueArray(-9);
+//        MinValueArray minValueArray2 = new MinValueArray( -12);
+//        MinValueArray minValueArray3 = new MinValueArray(-100);
+//        MinValueArray minValueArray4 = new MinValueArray(-198);
 
         int newArrayFindMinValue_3 = stringService.findMinValueInArray(new int[]{4, 5, 3, 6, -9, 45, 43, 15});
         assertTrue(newArrayFindMinValue_3 == -9);
 
         int newArrayFindMinValue_Mines12 = stringService.findMinValueInArray(new int[]{4, 5, 3, 6, -9, 45, 43, 15});
-        assertTrue(newArrayFindMinValue_Mines12 == -12);
+        assertTrue(newArrayFindMinValue_Mines12 == -9);
 
         int newArrayFindMinValue_Mines100 = stringService.findMinValueInArray(new int[]{4, 5, 3, 6, -9, 45, 43, 15});
         assertTrue(newArrayFindMinValue_Mines100 == -9);
