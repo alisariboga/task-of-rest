@@ -96,14 +96,14 @@ public class StringServiceTest {
         int newArrayFindMinValue_3 = stringService.findMinValueInArray(new int[]{4, 5, 3, 6, -9, 45, 43, 15});
         assertTrue(newArrayFindMinValue_3 == -9);
 
-        int newArrayFindMinValue_Mines12 = stringService.findMinValueInArray(new int[]{4, 5, 3, 6, -9, 45, 43, 15});
-        assertTrue(newArrayFindMinValue_Mines12 == -9);
+        int newArrayFindMinValue_Mines12 = stringService.findMinValueInArray(new int[]{-12, 7, 3, 6, -9, 45, 189, 15});
+        assertTrue(newArrayFindMinValue_Mines12 == -12);
 
-        int newArrayFindMinValue_Mines100 = stringService.findMinValueInArray(new int[]{4, 5, 3, 6, -9, 45, 43, 15});
-        assertTrue(newArrayFindMinValue_Mines100 == -9);
+        int newArrayFindMinValue_Mines100 = stringService.findMinValueInArray(new int[]{10, -198, 3, 76, -9, 45, 43, 15});
+        assertTrue(newArrayFindMinValue_Mines100 == -198);
 
-        int newArrayFindMinValue_Mines198 = stringService.findMinValueInArray(new int[]{4, 5, 3, 6, -9, 45, 43, 15});
-        assertTrue(newArrayFindMinValue_Mines198 == -9);
+        int newArrayFindMinValue_Mines198 = stringService.findMinValueInArray(new int[]{89, 5, 56, 6, -100, 21, 43, 15, 46, 54, 98, -1000});
+        assertTrue(newArrayFindMinValue_Mines198 == -1000);
 
 //        MinValueArray newArrayFindMinValue_Mines12 = stringService.findMinValueInArray(new int[]{-12, -8, 10, 46, 11, 65});
 //        assertTrue(new MinValueArray(newArrayFindMinValue_Mines12.getMinValue()).equals(minValueArray2));
