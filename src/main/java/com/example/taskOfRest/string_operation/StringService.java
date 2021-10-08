@@ -1,6 +1,7 @@
 package com.example.taskOfRest.string_operation;
 
 import java.util.Arrays;
+import javax.validation.constraints.Min;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -39,29 +40,29 @@ public class StringService {
         }
     }
 
-    public Integer sortedArrayAndFindMinValue(int[] numbers) {
-        int number[] = {3, 4, 5, 6, 7, 1, 2,};
+    public MinValueArray findMinValueInArray(int[] newArray) {
+        //-100,-98,0,1,2,3,4,12,12,15,34,34,45,89
+        int minValue;
 
-        int minValue = number[0];
+        minValue = newArray[0];
 
-        sortArrayMethod(number);
+        sortArrayMethod(newArray);
 
-        for (int i = 1; i < number.length - 1; i++)
-            if (minValue < number[i]) {
-                minValue = number[0];
+        for (int i = 1; i < newArray.length - 1; i++)
+            if (minValue < newArray[i]) {
+                minValue = newArray[0];
             }
-        return minValue;
-
+        return new MinValueArray(newArray,minValue);
     }
 
-    private void sortArrayMethod(int[] number) {
+    private void sortArrayMethod(int[] newArray) {
         int counter;
-        for (int i = 0; i < number.length; i++) {
-            for (int j = i + 1; j < number.length; j++) {
-                if (number[i] > number[j]) {
-                    counter = number[i];
-                    number[i] = number[j];
-                    number[j] = counter;
+        for (int i = 0; i < newArray.length; i++) {
+            for (int j = i + 1; j < newArray.length; j++) {
+                if (newArray[i] > newArray[j]) {
+                    counter = newArray[i];
+                    newArray[i] = newArray[j];
+                    newArray[j] = counter;
                 }
             }
         }

@@ -86,12 +86,43 @@ public class StringServiceTest {
     }
 
     @Test
-    public void test_SortedArrayAndFindMinValue() throws Exception {
+    public void test_FindMinValueInArray() throws Exception {
         StringService stringService = new StringService();
-        stringService.sortedArrayAndFindMinValue(new int[]{1, 2, 3, 4, 5, 6});
-        stringService.sortedArrayAndFindMinValue(new int[]{-12, -8, 10, 46, 11, 65});
-        stringService.sortedArrayAndFindMinValue(new int[]{89, 12, 34, -98, 12, 34, 45, 1, 2, 3, 4, 15, -100, 0});
-        stringService.sortedArrayAndFindMinValue(new int[]{21, 45, 32, 93, 8, 5, -198, 23, 21, 45});
+        MinValueArray minValueArray1 = new MinValueArray(new int[]{-9, 3, 4, 5, 6, 15, 43, 45}, -9);
+        MinValueArray minValueArray2 = new MinValueArray(new int[]{-12, -8, 10, 11, 46, 65}, -12);
+        MinValueArray minValueArray3 = new MinValueArray(new int[]{-100, -98, 0, 1, 2, 3, 4, 12, 15, 34, 45, 89}, -100);
+        MinValueArray minValueArray4 = new MinValueArray(new int[]{-198, 5, 8, 21, 21, 23, 32, 45, 45, 93,}, -198);
+
+        MinValueArray newArrayFindMinValue_3 = stringService.findMinValueInArray(new int[]{4, 5, 3, 6, -9, 45, 43, 15});
+        assertTrue(new MinValueArray(newArrayFindMinValue_3.getNewArray(), newArrayFindMinValue_3.getMinValue()).equals(minValueArray1));
+
+        MinValueArray newArrayFindMinValue_Mines12 = stringService.findMinValueInArray(new int[]{-12, -8, 10, 46, 11, 65});
+        assertTrue(new MinValueArray(newArrayFindMinValue_Mines12.getNewArray(), newArrayFindMinValue_Mines12.getMinValue()).equals(minValueArray2));
+
+        MinValueArray newArrayFindMinValue_Mines100 = stringService.findMinValueInArray(new int[]{34, 89, -98, 12, 45, 1, 2, 3, 4, 15, -100, 0});
+        assertTrue(new MinValueArray(newArrayFindMinValue_Mines100.getNewArray(), newArrayFindMinValue_Mines100.getMinValue()).equals(minValueArray3));
+
+        MinValueArray newArrayFindMinValue_Mines198 = stringService.findMinValueInArray(new int[]{21, 45, 32, 93, 8, 5, -198, 23, 21, 45});
+        assertTrue(new MinValueArray(newArrayFindMinValue_Mines198.getNewArray(), newArrayFindMinValue_Mines198.getMinValue()).equals(minValueArray4));
+
+
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
