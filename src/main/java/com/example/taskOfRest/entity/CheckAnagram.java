@@ -1,4 +1,4 @@
-package com.example.taskOfRest.string_operation;
+package com.example.taskOfRest.entity;
 
 
 public class CheckAnagram {
