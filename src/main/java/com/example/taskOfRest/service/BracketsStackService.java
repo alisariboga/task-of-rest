@@ -1,9 +1,7 @@
 package com.example.taskOfRest.service;
 
 import java.util.Stack;
-import org.springframework.stereotype.Service;
 
-@Service
 public class BracketsStackService {
     public int isOpenCloseBrackets(String s) {
         Stack<String> stack = new Stack<>();
@@ -16,17 +14,17 @@ public class BracketsStackService {
                 if (stack.isEmpty()){
                     return 0;
                 }
-                if (ch.equals(")")) {
+                else if (ch.equals(")")) {
                     if (!stack.pop().equals ("(")) {
                         return 0;
                     }
                 }
-                if (ch.equals("]")) {
+                else if (ch.equals("]")) {
                     if (!stack.pop().equals("[")) {
                         return 0;
                     }
                 }
-                if (ch.equals("}")) {
+                else if (ch.equals("}")) {
                     if (!stack.pop().equals("{")) {
                         return 0;
                     }
